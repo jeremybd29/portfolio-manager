@@ -3,12 +3,12 @@ package com.pluralsight;
 public abstract class FixedAsset implements Valuable {
 
     private String name;
-    private double value;
+    private double marketValue;
 
     //constructor
-    public FixedAsset(String name, double value) {
+    public FixedAsset(String name, double marketValue) {
         this.name = name;
-        this.value = value;
+        this.marketValue = marketValue;
     }
     //getter
     public String getName() {
@@ -17,13 +17,14 @@ public abstract class FixedAsset implements Valuable {
     public void setName(String name) {
         this.name = name;
     }
-    public double getValue() {
-        return value;
+    public double getMarketValue() {
+        return marketValue;
     }
     //setter
-    public void setValue(double value) {
-        this.value = value;
+    public void setMarketValue(double value) {
+        this.marketValue = value;
     }
+    public abstract double getValue();
 
 
 

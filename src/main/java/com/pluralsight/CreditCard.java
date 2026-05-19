@@ -19,9 +19,11 @@ public class CreditCard implements Valuable{
     public double getBalance(){
         return balance;
     }
-    public void makePurchase(double amount){
+    //add debt
+    public void charge(double amount){
         balance += amount;
     }
+    //pay off debt
     public void makePayment(double amount) {
         balance -= amount;
     }
