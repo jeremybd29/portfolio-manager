@@ -3,6 +3,10 @@ package com.pluralsight;
 public class Main {
     public static void main(String[] args) {
 
+        //create portfolio
+        Portfolio portfolio =
+                new Portfolio("John Cena's Portfolio");
+
         //house
         House house =
                 new House("House", 250000, 1967, 3500, 3);
@@ -25,17 +29,25 @@ public class Main {
         //debt
         card.charge(500);
 
-        // polymorphism
-        Valuable[] valuables = {house, gold, jewelry, account, card};
+        //add assets to portfolio
+        portfolio.add(house);
+        portfolio.add(gold);
+        portfolio.add(jewelry);
+        portfolio.add(account);
+        portfolio.add(card);
 
-    //loop through variables
-    for (Valuable item : valuables){
+        // display portfolio value
+        System.out.println("Total Portfolio Value: $" + portfolio.getValue());
 
-        {
-            System.out.println(
-                    "Value: $" + item.getValue()
+        //display most valuable asset
+        Valuable most = portfolio.getMostValuable();
 
-            );
-        }
+        System.out.println("Most Valuable Asset: " + most.getValue());
+
+        //display least valuable asset
+        Valuable least = portfolio.getLeastValuable();
+
+        System.out.println("Least Valuable Asset: " + least.getValue());
+
     }
-}}
+}
